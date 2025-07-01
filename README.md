@@ -11,14 +11,14 @@
 ### 一键部署
 
 #### EdgeOne Functions
-[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/OpenListTeam/OpenList-APIPages)
+[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/li-peifeng/APIPages)
 
 部署完成后，请登录EdgeOne Functions后台，修改环境变量，请参考[变量说明](#变量说明)部分
 
 
 
 #### Cloudflare Worker
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-APIPages)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/li-peifeng/APIPages)
 
 部署完成后，请登录Cloudflare Worker后台，修改环境变量，请参考[变量说明](#变量说明)部分
 
@@ -27,7 +27,7 @@
 #### 克隆代码
 
 ```shell
-git clone https://github.com/OpenListTeam/OpenList-APIPages.git
+git clone https://github.com/li-peifeng/APIPages.git
 ```
 
 #### 修改配置
