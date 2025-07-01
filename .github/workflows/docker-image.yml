@@ -43,7 +43,6 @@ jobs:
           labels: latest
           
     - name: Push Docker Image to ghcrio
-      run:     docker push ghcr.io/li-peifeng/api_server:latest
-            && docker tag  li-peifeng/api_server:latest ghcr.io/li-peifeng/api_server:latest
+      run:  docker tag  li-peifeng/api_server:latest ghcr.io/li-peifeng/api_server:latest
             && docker push ghcr.io/li-peifeng/api_server:latest
   
