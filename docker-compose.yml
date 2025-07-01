@@ -1,8 +1,8 @@
 version: '3'
 services:
-  oplist-api-server:
-    image: openlistteam/openlist_api_server:latest
-    container_name: oplist-api-server
+  api-server:
+    image: leolitaly/api_server:latest
+    container_name: api-server
     ports:
       - "3000:3000"
     environment:
