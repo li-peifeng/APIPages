@@ -1,10 +1,8 @@
-name: Docker Image CI
+name: Build and push Docker images
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  release:
+    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -46,9 +44,10 @@ jobs:
         push: true
         tags: |
           leolitaly/api_server:latest
+          leolitaly/api_server:${{ github.ref_name }}
           ghcr.io/li-peifeng/api_server:latest
-        labels: |
-          org.opencontainers.image.source=${{ github.repositoryUrl }}
+          ghcr.io/li-peifeng/api_server:${{ github.ref_name }}
+        labels: org.opencontainers.image.source=${{ github.repositoryUrl }}
         platforms: linux/amd64,linux/arm64
         cache-from: type=gha
         cache-to: type=gha,mode=max
