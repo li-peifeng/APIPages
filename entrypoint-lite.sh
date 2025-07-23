@@ -1,15 +1,19 @@
 #/bin/bash
 
-
-
-#/bin/bash
-
 # 替换.env文件中的MAIN_URLS
 if [ -z "${OPLIST_MAIN_URLS}" ]; then
     echo "MAIN_URLS is not set, skipping replacement."
 else
     echo "Replacing MAIN_URLS in .env file..."
     sed -i "s|MAIN_URLS=.*|MAIN_URLS=${OPLIST_MAIN_URLS}|" .env
+fi
+
+#替换目录下wrangler文件中的MAIN_URLS
+if [ -z "${OPLIST_PROXY_API}" ]; then
+    echo "PROXY_API is not set, skipping replacement."
+else
+    echo "Replacing MAIN_URLS in wrangler file..."
+    sed -i "s|\"PROXY_API\":.*|\"PROXY_API\": \"${OPLIST_PROXY_API}\",|" ./wrangler.jsonc
 fi
 
 # 替换.env文件中的onedrive_uid
@@ -150,7 +154,7 @@ fi
 
 # 执行npm run dev
 echo "Starting wrangler dev..."
-npm run dev-js
+npm run build-js && npm run deploy-js
 if [ $? -ne 0 ]; then
     echo "wrangler dev failed, exiting."
     exit 1

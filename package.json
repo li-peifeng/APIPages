@@ -3,10 +3,12 @@
   "scripts": {
     "dev-js": "tsx watch src/basic.ts",
     "build-js": "webpack --mode production",
-    "dev-cf": "wrangler dev",
-    "deploy-cf": "wrangler deploy --minify",
+    "deploy-js": "node dist/bundle.js",
+    "dev-cf": "wrangler dev --config wrangler.encrypt.jsonc",
+    "deploy-cf": "wrangler deploy --minify --config wrangler.encrypt.jsonc",
     "dev-eo": "edgeone pages dev",
-    "deploy-eo": "rm -rf ./node_modules && edgeone pages deploy ./ -n edgeone-hono-app -t ",
+    "build-eo": "edgeone pages build",
+    "deploy-eo": "edgeone pages deploy ./ -n edgeone-hono-app -t ",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
